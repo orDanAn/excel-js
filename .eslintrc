@@ -9,6 +9,7 @@
     "arrow-parens":"off",
     "require-jsdoc":"off",
     "object-curly-spacing": "off",
+    "operator-linebreak": "off"
   },
   "extends": [
     "eslint:recommended",
