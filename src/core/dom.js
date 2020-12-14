@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 class Dom {
   constructor(selector) {
     this.$el = typeof selector === 'string'
@@ -36,6 +37,31 @@ class Dom {
       this.$el.appendChild(node);
     }
     return this;
+  }
+
+  get data() {
+    return this.$el.dataset;
+  }
+
+  closest(selector) {
+    return $(this.$el.closest(selector));
+  }
+
+  getCoords() {
+    return this.$el.getBoundingClientRect();
+  }
+
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector);
+  }
+  // {
+  //   width: 200px
+  // }
+  css(style = {}) {
+    Object.keys(style)
+        .forEach(key => {
+          this.$el.style[key] = style[key];
+        });
   }
 }
 
